@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Marvel Character Application</title>
 </head>
+
 <body>
-    
+    <div class="container">
+
+        <h1 class="text-muted text-center my-4">Marvel Characters</h1>
+
+        <form class="change-character my-4 text-center text-muted">
+            <textarea placeholder="Enter your favorite marvel character here" id="charinput"></textarea>
+        </form>
+
+        <div class="card shadow-lg rounded">
+            <img src="https://via.placeholder.com/400x300" class="time card-img-top">
+
+            <div class="text-muted text-uppercase text-center details">
+                <h5 class="my-3">Character Name</h5>
+                <div class="display-4 my-4">
+                    <span>Description of character
+                    </span>
+                    <!-- from api -->
+
+                </div>
+                <div class="wiki">Wikipedia link </div>
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
+
 </html>
