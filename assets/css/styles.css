@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+   /* background: black; */
+}
+
+
+.marvel, .characters {
+    font-family: 'Bebas Neue', cursive;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: -0.3rem;
+    margin: 3rem .5rem 7rem .5rem;
+    display: inline-block;
+    line-height: 6rem;
+}
+
+.marvel {
+    line-height: 8rem;
+    font-size: 8rem;
+    padding: 1rem 1rem 0rem 1rem;
+}
+
+.characters {
+    display:inline-block;
+    font-size: 8rem;
+    letter-spacing: -0.1rem;
+    border-top: solid 0.3rem;
+    border-bottom: solid 0.3rem;
+    padding:1rem 0.3rem 0.3rem 0rem;
+    transform: scale(1,1.1);
+}
+
+#character-search:focus {
+    border-bottom: 1px solid rgb(255, 0, 0);
+    box-shadow: 0 1px 0 0 #000;
+ }
+
+ label {
+    font-size: 1.25rem;
+ }
