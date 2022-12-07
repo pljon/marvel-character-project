@@ -22,6 +22,7 @@ var formSubmit = function(event) {
     // sends value to getCharacterRepos to search for character in api
     if(characterName) {
         getCharacterRepos(characterName);
+        getWikiRepos(characterName);
     }
 }
 
