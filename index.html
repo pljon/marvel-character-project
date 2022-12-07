@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Sans+Narrow&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Marvel Character Application</title>
@@ -12,31 +15,31 @@
 
 <body>
     <div class="container">
+        <div class="row">
+            <div class="center-align col s12">
 
-        <h1 class="text-muted text-center my-4">Marvel Characters</h1>
+                <p class="marvel red white-text">Marvel</p>
+                <span class="characters transparent black-text">Characters</span>
 
-        <form class="change-character my-4 text-center text-muted">
-            <textarea placeholder="Enter your favorite marvel character here" id="charinput"></textarea>
-        </form>
+                <form class="col s8 offset-s2">
+                    <div class="input-field col s12">
+                        <div class="center-align">
+                            <label  for="character-search" class="black-text"></label>
+                            <input placeholder="Enter your favorite Marvel Character" type="text" name="character-search" class="black-text validate">
+                            
+                <div id="result"></div>
 
-        <div class="card shadow-lg rounded">
-            <img src="https://via.placeholder.com/400x300" class="time card-img-top">
-
-            <div class="text-muted text-uppercase text-center details">
-                <h5 class="my-3">Character Name</h5>
-                <div class="display-4 my-4">
-                    <span>Description of character
-                    </span>
-                    <!-- from api -->
-
-                </div>
-                <div class="wiki">Wikipedia link </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-
         </div>
+    </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>    
+    <script src="./assets/js/marvel.js"></script>
 </body>
 
 </html>
