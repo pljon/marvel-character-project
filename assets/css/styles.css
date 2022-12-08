@@ -44,4 +44,5 @@ html {
 
  .card, #thumbnail {
     display:none;
+    display: none;
  }
