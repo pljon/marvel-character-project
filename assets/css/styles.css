@@ -2,10 +2,6 @@
     box-sizing: border-box;
 }
 
-/* html {
-    background: black; 
-} */
-
 .background-image {
     background-image: url('./marvel5.jpg');
     background-size: cover;
