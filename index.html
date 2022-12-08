@@ -16,65 +16,43 @@
 
 <body>
     <div class="background-image"></div>
-    <div class="container">
-        <div class="row">
-            <div class="center-align col s12">
-                <!-- start logo -->
-                <div class="logo-container">
-                    <p class="marvel red white-text">Marvel</p>
-                    <span class="characters transparent white-text">Characters</span>
-                </div>
-                
-                <form class="col s8 offset-s2">
-                    <div class="input-field col s12">
-                        <div class="center-align">
-                            <label for="character-search" class="white-text"></label>
-                            <input placeholder="Enter your favorite Marvel Character" type="text"
-                                name="character-search" class="white-text validate">
-
-                            <div id="result">
-                                <div class="card" id="resultcard">
-                                    <!-- insert content here -->
-                                    <img src="" id="thumbnail" alt="thumbnail of favorite marvel character">
-                                </div>
-                            </div>
-
-
-
-
-                            <p class="marvel red white-text">Marvel</p>
-                            <span class="characters transparent black-text">Characters</span>
-
-                            <form class="col s8 offset-s2">
-                                <div class="input-field col s12">
-                                    <div class="center-align">
-
-                                        <input placeholder="Enter your favorite Marvel Character" type="text"
-                                            name="character-search" class="black-text validate">
-
-                                        <div id="result">
-                                            <div id="resultcard" class="card"></div>
-
-
-
-                                            <div class="card" id="resultcard">
-                                                <img src="" id="thumbnail" alt="thumbnail of favorite marvel character">
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                            </form>
-                        </div>
+        <div class="container">
+            <div class="row">
+                <div class="center-align col s12">
+                    <!-- marvel characters logo -->
+                    <div class="logo-container">
+                        <p class="marvel red white-text">Marvel</p>
+                        <span class="characters transparent white-text">Characters</span>
                     </div>
-            </div>
+                    <!-- input field -->
+                    <form class="col s8 offset-s2">
+                        <div class="input-field col s12">
+                            <div class="center-align">
+                                <label for="character-search" class="white-text"></label>
+                                <input placeholder="Enter your favorite Marvel Character" type="text"
+                                    name="character-search" class="white-text validate">
+                            </div>
+                        </div>
+                    </form>
+                        
+                        <!-- card for content -->
+                        <div id="result">
+                            <div class="card" id="resultcard">
+                                <!-- insert content here -->
+                                <img src="" id="thumbnail" alt="thumbnail of favorite marvel character">
+                            </div>
+                        </div>
+                </div>
+            </div>            
+        </div>
+    </div>
 
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            <script src="https://code.jquery.com/jquery-3.6.1.js"
-                integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-            <script src="./assets/js/marvel.js"></script>
-            <script src="./assets/js/wiki.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="./assets/js/marvel.js"></script>
+    <script src="./assets/js/wiki.js"></script>
 </body>
 
 </html>
