@@ -41,3 +41,7 @@ html {
  label {
     font-size: 1.25rem;
  }
+
+ .card, #thumbnail {
+    display: none;
+ }
