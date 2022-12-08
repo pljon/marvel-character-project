@@ -44,6 +44,7 @@ var getCharacterRepos = function (character) {
                 .then(function (data) {
                     // error message when characters around found
                     if (data.data.count === 0) {
+                        clearcard();
                         console.log('not found');
                         var error = $("<p></p>").text("This is not a character");
 
@@ -53,6 +54,7 @@ var getCharacterRepos = function (character) {
                         return;
                     }
 
+                    clearcard();
                     console.log(data.data.count);
 
                     var results = data.data.results;
@@ -76,19 +78,29 @@ var displayCharacterCard = function (searchedCharacter) {
         console.log(searchedCharacter[0].name);
         console.log(searchedCharacter[0].description);
 
-        cardcontainer.setAttribute('display', 'visible');
+        $("#resultcard").attr('style', 'display: inline-block');
         var thumbnail = searchedCharacter[0].thumbnail.path + '.jpg';
-        document.getElementById("thumbnail").src = `${thumbnail}`;
-        var name = searchedCharacter[0].name;
-
         var description = searchedCharacter[0].description;
-        var resultcard = document.querySelector('#resultcard');
+        var name = searchedCharacter[0].name;
+        var nameText = $(`<h2>${name}</h2>`);
+        var descriptionText = $(`<p class="desc">${description}</p>`);
+        var createImg = $(`<img src="${thumbnail}" />`); 
 
+        $(cardcontainer).append(nameText);
+        $(cardcontainer).append(createImg);
+        $(cardcontainer).append(descriptionText);
+        
+        
+
+        // document.getElementById("thumbnail").src = `${thumbnail}`;
+
+        var resultcard = document.querySelector('#resultcard');
+        
         //document.getElementById("resultcard").innerHTML  = `${thumbnail}`;
-        document.getElementById("resultcard").innerHTML = `${name}`;
-        document.getElementById("result").innerHTML = `${description}`;
+        //document.getElementById("resultcard").innerHTML = `${name}`;
+       // document.getElementById("result").innerHTML = `${description}`;
         //document.getElementById("thumbnail").innerHTML = `${createImg}`;
-        resultcard.append(createImg);
+        // resultcard.append(createImg);
     };
 
 };
@@ -104,3 +116,6 @@ renderResults();
 
 var characterForm = document.querySelector('form');
 characterForm.addEventListener('submit', formSubmit);
+function clearcard(){
+    $("#resultcard").empty();
+}

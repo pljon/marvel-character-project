@@ -18,7 +18,17 @@ var getWikiRepos = function(wiki) {
                             for (var i in data.query.pages) {
             
                                 console.log(data.query.pages[i].fullurl);
+                                var wiki = data.query.pages[i].fullurl;
+                                displayWikiLink(wiki);
                             }
             })
     })
 }
+
+// var displayWikiLink = function (url) {
+//     if (url) {
+//         var wikiUrl = url;
+//        var wikiLink = `<a href="${wikiUrl}">Wikipedia link</a>`;
+//        $(".desc").append(wikiLink);
+//     }
+//}
