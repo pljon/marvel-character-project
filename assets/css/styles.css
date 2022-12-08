@@ -50,7 +50,10 @@ html {
     font-size: 1.25rem;
  }
 
- .card, #thumbnail {
+ #resultcard {
     display:none;
-    display: none;
+ }
+
+ #thumbnail {
+    display:none;
  }

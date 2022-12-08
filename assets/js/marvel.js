@@ -14,63 +14,73 @@ var hash = '700588d4fba17a2c0d05eb1d655c1984';
 // only 1 input element, use as variable
 var characterInput = document.querySelector('input');
 
+const cardcontainer = document.getElementById("resultcard");
 
 // handles any submit, any query for a character
-var formSubmit = function(event) { 
+var formSubmit = function (event) {
     // stops page from reloading
     event.preventDefault();
-    
+
     // variable for input field value aka searched marvel character
     var characterName = characterInput.value.trim();
     characterForm.reset();
 
     // sends value to getCharacterRepos to search for character in api
-    if(characterName) {
+    if (characterName) {
         getCharacterRepos(characterName);
         getWikiRepos(characterName);
     }
 }
 
 // right now that character parameter is 
-var getCharacterRepos = function(character) {
+var getCharacterRepos = function (character) {
     var apiUrl = `https://gateway.marvel.com/v1/public/characters?name=${character}&ts=1&apikey=${key}&hash=${hash}`
 
     // could be neater, grabs data from the results when searching for inputted value
     fetch(apiUrl)
-        .then(function(response) {
-            console.log('success!')  
-               return response.json()
-                    .then(function(data) {
-                        
-                        console.log(data.data.count);
-                        
-                        var results = data.data.results;
+        .then(function (response) {
+            console.log('success!')
+            return response.json()
+                .then(function (data) {
+                    // error message when characters around found
+                    if (data.data.count === 0) {
+                        console.log('not found');
+                        var error = $("<p></p>").text("This is not a character");
 
-                        console.log(results);                       
-                        displayCharacterCard(results);
-                        
-            });
-        });         
-    };
+                        $(cardcontainer).append(error);
+                        $("#resultcard").attr('style', 'display: inline-block;');
+                       
+                        return;
+                    }
 
-            
+                    console.log(data.data.count);
+
+                    var results = data.data.results;
+
+                    console.log(results);
+                    displayCharacterCard(results);
+
+                });
+        });
+};
+
+
 // function to display card underneath input field
 // todo: append new card under #results, append character info into card
 
-var displayCharacterCard = function(searchedCharacter) {
+var displayCharacterCard = function (searchedCharacter) {
     if (searchedCharacter) {
-        
+
         // checked to see if info is being grabbed from objects
-        console.log(searchedCharacter[0].thumbnail.path +'.jpg');
+        console.log(searchedCharacter[0].thumbnail.path + '.jpg');
         console.log(searchedCharacter[0].name);
         console.log(searchedCharacter[0].description);
-        
-        var cardcontainer = document.getElementById("resultcard");
+
         cardcontainer.setAttribute('display', 'visible');
         var thumbnail = searchedCharacter[0].thumbnail.path + '.jpg';
         document.getElementById("thumbnail").src = `${thumbnail}`;
         var name = searchedCharacter[0].name;
-        
+
         var description = searchedCharacter[0].description;
         var resultcard = document.querySelector('#resultcard');
 
@@ -88,7 +98,7 @@ $('#result').on('')
 function renderResults() {
     $('#result').empty();
 
-   
+
 }
 renderResults();
 
