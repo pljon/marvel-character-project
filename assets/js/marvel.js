@@ -64,6 +64,7 @@ console.log('success!')
 
 var displayCharacterCard = function(searchedCharacter) {
     if (searchedCharacter) {
+        
         // checked to see if info is being grabbed from objects
         console.log(searchedCharacter[0].thumbnail.path +'.jpg');
         console.log(searchedCharacter[0].name);
@@ -80,6 +81,18 @@ var displayCharacterCard = function(searchedCharacter) {
 
        console.log(searchedCharacter[0].description);
         // need to create elements below
+
+        
+        var thumbnail = searchedCharacter[0].thumbnail.path +'.jpg';
+        
+        var createImg = `<img href=${thumbnail}>`;
+        
+        var resultcard = document.querySelector('#resultcard');
+        
+        resultcard.append(createImg);
+   
+        // document.getElementById('thumbnail')
+
 
 
         var cardcontainer = document.getElementById("resultcard");
@@ -103,7 +116,9 @@ var displayCharacterCard = function(searchedCharacter) {
 
 
         
+
     };
+
 };
 // function to display character card
 function displayCharacterCard() {

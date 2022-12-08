@@ -35,10 +35,6 @@ var displayWiki = function(wikiLink) {
 
 var url = 'https://en.wikipedia.org/w/api.php?'
 
-
-
-
-
 var getWikiRepos = function(wiki) {
     
     var api = `${url}action=query&origin=*&format=json&titles=${wiki}&prop=info&inprop=url`;
@@ -60,32 +56,7 @@ var getWikiRepos = function(wiki) {
             })
     })
 }
-// var xhr = new XMLHttpRequest();
 
-// var getWikiRepos = function(wiki) {
-//     var api = `${url}action=query&origin=*&titles=${wiki}&prop=info&inprop=url`
 
-//     
-//     xhr.open('GET', url, true);
-    
-//     
-//     xhr.onload = function() {
-//         
-//         var data = JSON.parse(this.response);
-    
-//         
-//         console.log(data);
-    
-//         
-//         console.log(data.query.pages)
-    
-//         
-//         
-//         for (var i in data.query.pages) {
-//             console.log(data.query.pages[i].title);
-//         }
-//     }
-//     
-//     xhr.send();
-// }
+
 

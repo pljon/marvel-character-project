@@ -2,8 +2,21 @@
     box-sizing: border-box;
 }
 
+
+/* html {
+    background: black; 
+} */
+
+.background-image {
+    background-image: url('./marvel5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    z-index: 0;
+
 html {
    background: black;
+
 }
 
 
