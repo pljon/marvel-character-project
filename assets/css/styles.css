@@ -3,7 +3,7 @@
 }
 
 html {
-   /* background: black; */
+   background: black;
 }
 
 
@@ -15,17 +15,17 @@ html {
     margin: 3rem .5rem 7rem .5rem;
     display: inline-block;
     line-height: 6rem;
+    font-size:8rem;
 }
 
 .marvel {
     line-height: 8rem;
-    font-size: 8rem;
     padding: 1rem 1rem 0rem 1rem;
 }
 
 .characters {
     display:inline-block;
-    font-size: 8rem;
+    
     letter-spacing: -0.1rem;
     border-top: solid 0.3rem;
     border-bottom: solid 0.3rem;
@@ -40,4 +40,8 @@ html {
 
  label {
     font-size: 1.25rem;
+ }
+
+ .card, #thumbnail {
+    display:none;
  }
