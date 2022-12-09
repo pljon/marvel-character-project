@@ -5,16 +5,13 @@ var key = '17df38d3f4b222ca109def2087cb8269';
 // hash via md5 generator
 var hash = '700588d4fba17a2c0d05eb1d655c1984';
 
-// for characters
-// https://gateway.marvel.com/v1/public/characters?name=timmyturner&ts=1&apikey=17df38d3f4b222ca109def2087cb8269&hash=700588d4fba17a2c0d05eb1d655c1984
+// wikipedia base url
+var url = 'https://en.wikipedia.org/w/api.php?'
 
-// query url example for hulk
-// https://gateway.marvel.com/v1/public/characters?name=hulk&ts=1&apikey=17df38d3f4b222ca109def2087cb8269&hash=700588d4fba17a2c0d05eb1d655c1984
-
-// only 1 input element, use as variable
 var characterInput = document.querySelector('input');
-
+var form = document.querySelector('form');
 const cardcontainer = document.getElementById("resultcard");
+
 
 // handles any submit, any query for a character
 var formSubmit = function (event) {
@@ -23,12 +20,13 @@ var formSubmit = function (event) {
 
     // variable for input field value aka searched marvel character
     var characterName = characterInput.value.trim();
+    localStorage.setItem('character-value', characterName);
     characterForm.reset();
 
     // sends value to getCharacterRepos to search for character in api
     if (characterName) {
         getCharacterRepos(characterName);
-        getWikiRepos(characterName);
+
     }
 }
 
@@ -36,7 +34,7 @@ var formSubmit = function (event) {
 var getCharacterRepos = function (character) {
     var apiUrl = `https://gateway.marvel.com/v1/public/characters?name=${character}&ts=1&apikey=${key}&hash=${hash}`
 
-    // could be neater, grabs data from the results when searching for inputted value
+    // grabs data from the results when searching for inputted value
     fetch(apiUrl)
         .then(function (response) {
             console.log('success!')
@@ -50,7 +48,7 @@ var getCharacterRepos = function (character) {
 
                         $(cardcontainer).append(error);
                         $("#resultcard").attr('style', 'display: inline-block;');
-                       
+
                         return;
                     }
 
@@ -62,14 +60,44 @@ var getCharacterRepos = function (character) {
                     console.log(results);
                     displayCharacterCard(results);
 
-                });
+                }).then(function () {
+                    getWikiRepos(character);
+                })
         });
 };
 
 
-// function to display card underneath input field
-// todo: append new card under #results, append character info into card
+var getWikiRepos = function (wiki) {
+    var api = `${url}action=query&origin=*&format=json&titles=${wiki}&prop=info&inprop=url`;
+    fetch(api)
+        .then(function (response) {
+            return response.json()
+                .then(function (data) {
+                    console.log(data.query.pages);
+                    var wiki
+                    for (var i in data.query.pages) {
+                        wiki = data.query.pages[i].fullurl;
+                        console.log(data.query.pages[i].fullurl);
+                    }
+                    return wiki
+                }).then(function (wiki) {
+                    console.log(wiki);
+                    displayWikiLink(wiki);
+                })
+        })
+}
 
+var displayWikiLink = function (url) {
+    if (url) {
+
+        console.log(url);
+        console.log($('.wikipedia'));
+        $('.wikipedia').attr("href", url);
+
+    }
+}
+
+// function to display card underneath input field
 var displayCharacterCard = function (searchedCharacter) {
     if (searchedCharacter) {
 
@@ -84,38 +112,22 @@ var displayCharacterCard = function (searchedCharacter) {
         var name = searchedCharacter[0].name;
         var nameText = $(`<h2>${name}</h2>`);
         var descriptionText = $(`<p class="desc">${description}</p>`);
-        var createImg = $(`<img src="${thumbnail}" />`); 
+        var createImg = $(`<img src="${thumbnail}" />`);
+        var href = $(`<a class="wikipedia">Wikipedia Link</a>`)
 
         $(cardcontainer).append(nameText);
         $(cardcontainer).append(createImg);
         $(cardcontainer).append(descriptionText);
-        
-        
+        $(cardcontainer).append(href);
 
-        // document.getElementById("thumbnail").src = `${thumbnail}`;
-
-        var resultcard = document.querySelector('#resultcard');
-        
-        //document.getElementById("resultcard").innerHTML  = `${thumbnail}`;
-        //document.getElementById("resultcard").innerHTML = `${name}`;
-       // document.getElementById("result").innerHTML = `${description}`;
-        //document.getElementById("thumbnail").innerHTML = `${createImg}`;
-        // resultcard.append(createImg);
     };
 
 };
 
-$('#result').on('')
-
-function renderResults() {
-    $('#result').empty();
-
-
-}
-renderResults();
-
 var characterForm = document.querySelector('form');
+
 characterForm.addEventListener('submit', formSubmit);
-function clearcard(){
+
+function clearcard() {
     $("#resultcard").empty();
 }
