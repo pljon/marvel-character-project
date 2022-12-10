@@ -6,12 +6,13 @@
     background-image: url('./m1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 60vh;
+    height: 70vh;
     z-index: 0;
 }
 
 html {
    background: black;
+   color: #CACCCC;
 }
 
 
@@ -44,19 +45,40 @@ html {
     transform: scale(1,1.1);
 }
 
-#character-search:focus {
-    border-bottom: 1px solid rgb(255, 0, 0);
-    box-shadow: 0 1px 0 0 #000;
- }
+/* #character-search:focus {
+    border-bottom: 1px solid #D30215;
+    text-align: center;
+ } */
 
  label {
     font-size: 1.25rem;
  }
 
  #resultcard {
-    display:none;
+    position: relative;
+    color: #CACCCC;
+    background-color: black;
+
  }
 
  #thumbnail {
     display:none;
  }
+
+.logo-container {
+    box-sizing: border-box;
+    position: absolute;
+    padding: 2%;
+    background-color: transparent;
+    margin: 10%;
+    text-align: center;
+    top: -25vh;
+}
+
+/* .form-container {
+box-sizing: border-box;
+position: relative;
+z-index: 10;
+background-color: blue;
+padding: 2%;
+} */
