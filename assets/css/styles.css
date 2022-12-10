@@ -3,10 +3,10 @@
 }
 
 .background-image {
-    background-image: url('./marvel5.jpg');
+    background-image: url('./m1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 50vh;
+    height: 60vh;
     z-index: 0;
 }
 
@@ -17,6 +17,7 @@ html {
 
 .marvel, .characters {
     font-family: 'Bebas Neue', cursive;
+    text-shadow: -3px 2px 1px #757676 ;
     position: relative;
     text-transform: uppercase;
     letter-spacing: -0.3rem;
@@ -24,6 +25,8 @@ html {
     display: inline-block;
     line-height: 6rem;
     font-size:8rem;
+    color: #CACCCC;
+    
 }
 
 .marvel {
