@@ -30,6 +30,9 @@ html {
     display: inline-block;
     line-height: 6rem;
     font-size:8rem;
+    font-size: 8vw;
+    max-width:40%;
+    max-height: 50%;
     color:white;
 }
 
@@ -39,7 +42,6 @@ html {
 }
 
 .characters {
-    display:inline-block;
     letter-spacing: -0.1rem;
     border-top: solid 0.3rem;
     border-bottom: solid 0.3rem;
@@ -63,12 +65,35 @@ html {
 
 .logo-container {
     padding: 2vh 0vw 0vh 0vw;
-    margin: 0 17%;
-    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0 15%;
+    /* width:50%; */
+    /* background-color: rgba(0, 0, 0, 0.8); */
     text-align: center;
 }
 
+#logo-img {
+    width:100%;
+}
 
 input {
     background-color: rgba(0, 0, 0, 0.6) !important;
+    min-width:50% !important;
+}
+
+@media (max-device-width: 720px){
+    .marvel, .characters {
+        font-size: 6rem !important;
+    }
+}
+
+@media (max-device-width: 640px){
+    .marvel, .characters {
+        font-size: 4rem !important;
+    }
+}
+
+@media (max-device-width: 320px){
+    .marvel, .characters {
+        font-size: 2rem !important;
+    }
 }
