@@ -6,13 +6,13 @@
     background-image: url('../images/m1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 70vh;
+    height: 110vh;
     z-index: 0;
     width:100%;
 }
 
 html {
-   background: black;
+   background: rgb(182, 49, 49);
    color: #CACCCC;
 }
 
@@ -57,10 +57,11 @@ html {
     position: relative;
     color: #CACCCC;
     background-color:  rgba(0, 0, 0, 0.8);
+    margin: 0 20%;
  }
 
  #thumbnail {
-    width:65%;
+    width: 40%;
  }
 
 .logo-container {
