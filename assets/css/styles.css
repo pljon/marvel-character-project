@@ -3,7 +3,7 @@
 }
 
 .background-image {
-    background-image: url('./m1.jpg');
+    background-image: url('../images/m1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 70vh;
