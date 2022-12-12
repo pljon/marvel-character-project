@@ -106,13 +106,13 @@ var displayCharacterCard = function (searchedCharacter) {
         console.log(searchedCharacter[0].name);
         console.log(searchedCharacter[0].description);
 
-        $("#resultcard").attr('style', 'display: inline-block');
+        $("#resultcard").attr('style', 'display: inline-block; padding: 2%;');
         var thumbnail = searchedCharacter[0].thumbnail.path + '.jpg';
         var description = searchedCharacter[0].description;
         var name = searchedCharacter[0].name;
         var nameText = $(`<h2>${name}</h2>`);
         var descriptionText = $(`<p class="desc">${description}</p>`);
-        var createImg = $(`<img src="${thumbnail}" />`);
+        var createImg = $(`<img id="thumbnail" src="${thumbnail}" />`);
         var href = $(`<a class="wikipedia">Wikipedia Link</a>`)
 
         $(cardcontainer).append(nameText);
