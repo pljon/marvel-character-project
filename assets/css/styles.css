@@ -3,10 +3,10 @@
 }
 
 .background-image {
-    background-image: url('../images/m1.jpg');
+    background-image: url('../images/marvel_character_group-crop.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 110vh;
+    height: 100vh;
     z-index: 0;
     width:100%;
 }
